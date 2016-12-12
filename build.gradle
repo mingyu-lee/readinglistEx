@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") // 스프링 부트 플러그인 의존성
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot' // 스프 부트 플러그인 적용
+
+jar {
+	baseName = 'readinglist'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa') // 스타터 의존성
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-security')
+	runtime('com.h2database:h2')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compileOnly('org.projectlombok:lombok:1.16.12')
+
+    //thymeleaf html5 닫기 오류 처리 라이브러리
+    //compile("net.sourceforge.nekohtml:nekohtml:1.9.22")
+    //compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.2.9")
+}
