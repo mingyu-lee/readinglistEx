@@ -16,7 +16,7 @@ public class Book {
     @Id // 엔티티의 유일성을 식별
     @GeneratedValue(strategy=GenerationType.AUTO) // 자동으로 값을 제공하는 필드로 지정
     private Long id;
-    private String reader;
+    private Reader reader;
     private String isbn;
     private String title;
     private String author;

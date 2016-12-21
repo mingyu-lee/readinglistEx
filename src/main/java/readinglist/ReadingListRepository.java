@@ -13,5 +13,5 @@ import java.util.List;
  */
 public interface ReadingListRepository extends JpaRepository<Book, Long> {
     // 지정한 독자의 이름으로 독서 목록을 검색
-    List<Book> findByReader(String reader);
+    List<Book> findByReader(Reader reader);
 }
