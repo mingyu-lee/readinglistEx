@@ -33,9 +33,21 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.security:spring-security-test')
+	testCompile('org.seleniumhq.selenium:selenium-java:2.53.0')
 	compileOnly('org.projectlombok:lombok:1.16.12')
+
+	//optional "org.springframework.boot:spring-boot-configuration-processor"
 
     //thymeleaf html5 닫기 오류 처리 라이브러리
     //compile("net.sourceforge.nekohtml:nekohtml:1.9.22")
     //compile("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.2.9")
+}
+//compileJava.dependsOn(ProcessResources)
+
+eclipse {
+	classpath {
+		containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	}
 }

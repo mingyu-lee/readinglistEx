@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Oops!</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+    <div class="errorPage">
+        <span class="oops">Oop!</span><br />
+        <img th:src="@{/imgaes/MissingPage.png}" />
+        <p>There seems to be a problem with the page you requested
+        <span th:text="${path}"></span>).</p> <!--요청 경로 표시 -->
+        <p th:text="${'Details: ' + message}"></p> <!-- 상세한 오류 표시 -->
+    </div>
+</body>
+</html>

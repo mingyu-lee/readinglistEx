@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+
     <title>Reading List</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}"></link>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
 <form method="POST" th:action="@{/logout}">
@@ -15,8 +18,10 @@
         <dt class="bookHeadline">
             <a th:href="'http://www.amazon.com/gp/product/'
           + ${book.isbn}
-          + '/tag=' + ${amazonID}"
-               th:text="${book.title}">Title</a> by
+          + '/tag='+${amazonID}"
+            th:text="${book.title}">
+                <!--+ '/tag=' + ${amazonID}"-->
+                Title</a> by
             <span th:text="${book.author}">Author</span>
             (ISBN: <span th:text="${book.isbn}">ISBN</span>)
         </dt>
