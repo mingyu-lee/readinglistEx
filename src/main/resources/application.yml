@@ -44,6 +44,10 @@ server:
       username: sa
       password:
       driverClassName: org.h2.Driver
+endpoints:
+  enabled: false
+  metrics:
+    enabled: true
 
 ---
 
